@@ -1,68 +1,77 @@
-# 📈 Automated Trading Bot (Angel One API)
+# 📈 Automated Trading Bot (Angel One SmartAPI)
 
-This project is a **Python-based automated trading bot** built using the **Angel One SmartAPI**, designed to execute trades based on a **Range Filter strategy**. It follows a modular architecture, making it easy to extend, test, and customize.
-
----
-
-## 🚀 Features
-
-- 📊 Automated trade execution using Angel One API  
-- 📉 Range Filter strategy for signal generation  
-- 🔐 Secure login with OTP + MPIN  
-- ⚙️ Configurable parameters via `config.json`  
-- 🧩 Modular design (data, signals, orders, risk separated)  
-- 🧪 Backtesting using historical OHLC data  
-- 📝 Logging system for trades and errors  
+A modular, production-oriented **algorithmic trading system** built in Python using the **Angel One SmartAPI**.  
+The bot implements a **Range Filter–based strategy** to identify trend breakouts while minimizing market noise, with support for configurable risk management and backtesting.
 
 ---
 
-## 🗂️ Project Structure
-├── config.json
-├── main.py
-├── login.py
-├── login_test.py
-├── data_fetcher.py
-├── signal_generator.py
-├── order_manager.py
-├── risk_manager.py
-├── backtest.py
-├── logs/
-├── *.csv
+## 🚀 Overview
+
+This project is designed as a **scalable and extensible trading framework**, separating concerns across data acquisition, signal generation, order execution, and risk control. It enables both **live trading** and **strategy validation using historical data**.
 
 ---
 
-## ⚙️ How It Works
+## ✨ Key Features
 
-1. Login using Angel One SmartAPI  
-2. Fetch market data (live or historical)  
-3. Generate buy/sell signals using Range Filter  
-4. Apply risk management rules  
-5. Execute trades automatically  
-6. Log results for tracking  
+- **Automated Trade Execution**  
+  Seamless integration with Angel One SmartAPI for real-time order placement and management  
+
+- **Strategy Engine (Range Filter)**  
+  Filters price noise and detects breakout conditions for signal generation  
+
+- **Secure Authentication**  
+  Login flow using OTP + MPIN  
+
+- **Config-Driven Architecture**  
+  Centralized configuration (`config.json`) for instruments, parameters, and risk settings  
+
+- **Modular Design**  
+  Clean separation of components for maintainability and scalability  
+
+- **Backtesting Capability**  
+  Evaluate strategy performance using historical OHLC datasets  
+
+- **Logging & Debugging Support**  
+  Structured logging for trades, signals, and system events  
 
 ---
 
-## 🛠️ Tech Stack
+## ⚙️ System Workflow
 
-- Python  
-- Angel One SmartAPI  
-- Pandas  
-- JSON  
+1. **Authenticate** with Angel One SmartAPI  
+2. **Fetch Market Data** (live or historical)  
+3. **Generate Trading Signals** via Range Filter logic  
+4. **Apply Risk Controls** (position sizing, limits, etc.)  
+5. **Execute Orders** through broker API  
+6. **Log & Monitor** system activity  
 
 ---
 
-## 📌 Strategy Overview
+## 🧠 Strategy Description
 
-The Range Filter strategy reduces market noise by filtering price movements within a defined range.  
-Trades are triggered when price breaks out of the filtered range, indicating potential trends.
+The **Range Filter Strategy** is designed to reduce market noise by smoothing price action within a defined range.  
+Trade signals are generated when the price **breaks out of the filtered range**, indicating potential directional momentum.
+
+---
+
+## 🛠️ Technology Stack
+
+- **Language:** Python  
+- **API:** Angel One SmartAPI  
+- **Data Handling:** Pandas  
+- **Configuration:** JSON  
 
 ---
 
 ## 🧪 Backtesting
 
-- Uses CSV OHLC data (e.g., TATAPOWER, YESBANK)  
-- Helps evaluate strategy performance before live deployment  
+The framework supports offline testing using historical OHLC datasets (CSV format), enabling:
+
+- Strategy validation before deployment  
+- Performance evaluation across instruments  
+- Parameter tuning and optimization  
 
 ---
 
-This project is for educational purposes only. Trading involves financial risk. Use at your own discretion.
+This project is intended for **educational and research purposes only**.  
+Algorithmic trading involves substantial financial risk. The author assumes no responsibility for any financial losses incurred through the use of this software.
